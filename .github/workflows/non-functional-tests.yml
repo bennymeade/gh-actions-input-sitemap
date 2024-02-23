@@ -3,6 +3,9 @@ name: Non functional tests
 on:
   workflow_dispatch:
     inputs:
+      url:
+        description: Enter single page or sitemap.xml URL
+        required: true
       run-accessibility:
         type: boolean
         description: Run accessibility checks?
