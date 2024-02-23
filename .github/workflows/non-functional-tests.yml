@@ -39,6 +39,7 @@ jobs:
           JSON: ${{ toJSON(github) }}
       - name: Input values
         run: |
+          echo "Page(s) under test: ${{ github.event.inputs.url }}"
           echo "run-accessibility: ${{ github.event.inputs.run-accessibility }}"
           echo "run-security: ${{ github.event.inputs.run-security }}"
           echo "run-performance: ${{ github.event.inputs.run-performance }}"
