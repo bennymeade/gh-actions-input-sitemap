@@ -1,0 +1,43 @@
+name: Non functional tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      run-accessibility:
+        type: boolean
+        description: Run accessibility checks?
+        required: false
+      run-security:
+        type: boolean
+        description: Run security checks?
+        required: false
+      run-performance:
+        type: boolean
+        description: Run performance checks?
+        required: false
+      run-link-checker:
+        type: boolean
+        description: Run link checker checks?
+        required: false
+      run-spelling:
+        type: boolean
+        description: Run spelling checks?
+        required: false
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show github json
+        run: |
+          echo $JSON
+        env:
+          JSON: ${{ toJSON(github) }}
+      - name: Inpuit values
+        run: |
+          echo "${{ github.event.inputs.run-accessibility }}"
+          echo "${{ github.event.inputs.run-security }}"
+          echo "${{ github.event.inputs.run-performance }}"
+          echo "${{ github.event.inputs.run-link-checker }}"
+          echo "${{ github.event.inputs.run-spelling }}"
