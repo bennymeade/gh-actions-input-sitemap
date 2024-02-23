@@ -18,9 +18,9 @@ on:
         type: boolean
         description: Run performance checks?
         required: false
-      run-link-checker:
+      run-link:
         type: boolean
-        description: Run link checker checks?
+        description: Run link checks?
         required: false
       run-spelling:
         type: boolean
@@ -43,5 +43,5 @@ jobs:
           echo "run-accessibility: ${{ github.event.inputs.run-accessibility }}"
           echo "run-security: ${{ github.event.inputs.run-security }}"
           echo "run-performance: ${{ github.event.inputs.run-performance }}"
-          echo "run-link-checker: ${{ github.event.inputs.run-link-checker }}"
+          echo "run-link: ${{ github.event.inputs.run-link }}"
           echo "run-spelling: ${{ github.event.inputs.run-spelling }}"
