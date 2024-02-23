@@ -34,10 +34,10 @@ jobs:
           echo $JSON
         env:
           JSON: ${{ toJSON(github) }}
-      - name: Inpuit values
+      - name: Input values
         run: |
-          echo "${{ github.event.inputs.run-accessibility }}"
-          echo "${{ github.event.inputs.run-security }}"
-          echo "${{ github.event.inputs.run-performance }}"
-          echo "${{ github.event.inputs.run-link-checker }}"
-          echo "${{ github.event.inputs.run-spelling }}"
+          echo "run-accessibility: ${{ github.event.inputs.run-accessibility }}"
+          echo "run-security: ${{ github.event.inputs.run-security }}"
+          echo "run-performance: ${{ github.event.inputs.run-performance }}"
+          echo "run-link-checker: ${{ github.event.inputs.run-link-checker }}"
+          echo "run-spelling: ${{ github.event.inputs.run-spelling }}"
